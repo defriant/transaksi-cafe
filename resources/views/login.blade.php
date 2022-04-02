@@ -20,7 +20,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
-	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/mutiara_teknik_logo.png') }}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.png') }}">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="{{ asset('assets/img/') }}" class="login-logo"></div>
+								<div class="logo text-center"><img src="{{ asset('assets/img/logo.png') }}" class="login-logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
 							<form class="form-auth-small" method="POST" action="/login-attempt">

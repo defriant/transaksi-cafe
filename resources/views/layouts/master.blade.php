@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/logo.png') }}">
     <style>
         .ui-datepicker-calendar {
             display: none;
@@ -51,7 +51,7 @@
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="brand">
-                <a href="/dashboard"><img src="{{ asset('assets/img/') }}" class="img-responsive logo"></a>
+                <a href="/dashboard"><img src="{{ asset('assets/img/logo.png') }}" class="img-responsive logo"></a>
             </div>
             <div class="container-fluid">
                 <div class="navbar-btn">
