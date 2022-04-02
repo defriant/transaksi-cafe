@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Feb 2022 pada 12.17
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 8.0.0
+-- Waktu pembuatan: 02 Apr 2022 pada 17.21
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,7 +65,7 @@ INSERT INTO `produk` (`id`, `nama`, `harga`, `stok`, `gambar`, `created_at`, `up
 ('BT-79574', 'Coffee Brown Sugar', 17000, 12, '1643675249-HAMFN.jpeg', '2022-02-01 00:27:29', '2022-02-01 00:28:58'),
 ('LL-79746', 'Americano', 14000, 18, '1643653619-3V5KK.jpeg', '2022-01-31 18:26:59', '2022-02-01 00:28:58'),
 ('MH-51772', 'Cappucino', 19000, 9, '1643671575-4URK8.jpeg', '2022-01-31 23:26:15', '2022-02-01 00:11:54'),
-('NH-98571', 'Cafe Latte', 18000, 13, '1643652347-35GMM.jpeg', '2022-01-31 18:05:47', '2022-02-01 00:21:52'),
+('NH-98571', 'Cafe Latte', 18000, 11, '1643652347-35GMM.jpeg', '2022-01-31 18:05:47', '2022-04-02 15:20:13'),
 ('PU-55404', 'Cinnamon Dolce Latte', 20000, 13, '1643659681-A3MX9.jpeg', '2022-01-31 20:08:01', '2022-02-01 00:18:56'),
 ('RB-43551', 'Moccacino', 18000, 7, '1643657153-EDGT1.jpeg', '2022-01-31 19:25:53', '2022-02-01 00:15:41'),
 ('TE-54114', 'Coffee Beer', 15000, 15, '1643659934-A764Y.jpeg', '2022-01-31 20:12:14', '2022-02-01 00:15:41');
@@ -83,17 +83,6 @@ CREATE TABLE `transaksi` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `transaksi`
---
-
-INSERT INTO `transaksi` (`id`, `periode`, `total`, `created_at`, `updated_at`) VALUES
-('INV3058', '2022-02-01', 40000, '2022-02-01 00:18:56', '2022-02-01 00:18:56'),
-('INV5071', '2022-02-01', 85000, '2022-02-01 00:14:19', '2022-02-01 00:14:19'),
-('INV7046', '2022-02-01', 107000, '2022-02-01 00:28:58', '2022-02-01 00:28:58'),
-('INV8573', '2022-02-01', 48000, '2022-02-01 00:15:41', '2022-02-01 00:15:41'),
-('INV9937', '2022-02-01', 92000, '2022-02-01 00:11:54', '2022-02-01 00:11:54');
 
 -- --------------------------------------------------------
 
@@ -113,21 +102,6 @@ CREATE TABLE `transaksi_produk` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `transaksi_produk`
---
-
-INSERT INTO `transaksi_produk` (`id`, `periode`, `invoice`, `id_produk`, `nama`, `harga`, `jumlah`, `total`, `created_at`, `updated_at`) VALUES
-(138, '2022-02-01', 'INV9937', 'NH-98571', 'Cafe Latte', 18000, 3, 54000, '2022-02-01 00:11:54', '2022-02-01 00:11:54'),
-(139, '2022-02-01', 'INV9937', 'MH-51772', 'Cappucino', 19000, 2, 38000, '2022-02-01 00:11:54', '2022-02-01 00:11:54'),
-(140, '2022-02-01', 'INV5071', 'PU-55404', 'Cinnamon Dolce Latte', 20000, 2, 40000, '2022-02-01 00:14:19', '2022-02-01 00:14:19'),
-(141, '2022-02-01', 'INV5071', 'TE-54114', 'Coffee Beer', 15000, 3, 45000, '2022-02-01 00:14:19', '2022-02-01 00:14:19'),
-(142, '2022-02-01', 'INV8573', 'RB-43551', 'Moccacino', 18000, 1, 18000, '2022-02-01 00:15:41', '2022-02-01 00:15:41'),
-(143, '2022-02-01', 'INV8573', 'TE-54114', 'Coffee Beer', 15000, 2, 30000, '2022-02-01 00:15:41', '2022-02-01 00:15:41'),
-(144, '2022-02-01', 'INV3058', 'PU-55404', 'Cinnamon Dolce Latte', 20000, 2, 40000, '2022-02-01 00:18:56', '2022-02-01 00:18:56'),
-(145, '2022-02-01', 'INV7046', 'BT-79574', 'Coffee Brown Sugar', 17000, 3, 51000, '2022-02-01 00:28:58', '2022-02-01 00:28:58'),
-(146, '2022-02-01', 'INV7046', 'LL-79746', 'Americano', 14000, 4, 56000, '2022-02-01 00:28:58', '2022-02-01 00:28:58');
 
 -- --------------------------------------------------------
 
@@ -204,7 +178,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `transaksi_produk`
 --
 ALTER TABLE `transaksi_produk`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
